@@ -12,13 +12,4 @@ This Python script is designed to scrape product names from Amazon's website. Le
 2. **Set Up ChromeDriver:** Download the appropriate ChromeDriver version compatible with your Chrome browser. Ensure it's in your system's PATH or provide its path in the script.
 3. **Run the Script:** Execute the Python script, providing the desired search query or category as input. The script will automatically scrape product names and save them in a CSV file.
 
-**Example Usage:**
-```
-python amazon_scraper.py "ultrawide monitor"
-```
-
-Feel free to explore, modify, and integrate this script into your projects. Happy scraping!
-
---- 
-
 This description outlines the purpose, features, and usage of your Amazon product name scraper, providing potential users with a clear understanding of its capabilities and how to utilize it effectively.
