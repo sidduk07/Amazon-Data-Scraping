@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Product Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Product Scraper</h1>
+    <form method="post">
+        <label for="search_term">Enter Search Keyword:</label>
+        <input type="text" id="search_term" name="search_term" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Scraped Product Data:</h2>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Ratings</th>
+            <th>Review Count</th>
+            <th>URL</th>
+        </tr>
+        {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+                <td><a href="{{ record[4] }}" target="_blank">{{ record[4] }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
