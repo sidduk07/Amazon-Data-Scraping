@@ -3,12 +3,6 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
-# Specify the path to chromedriver.exe
-chrome_driver_path = "C:\\Users\\siddappa\\Web Scrapping\\chromedriver_win32\\chromedriver.exe"
-
-# Initialize Chrome WebDriver with the specified path
-driver = webdriver.Chrome(executable_path=chrome_driver_path)
-
 def get_url(search_term):
     """ Generate URL from search term"""
     template = 'https://www.amazon.in/s?k={}&crid=2YNRYJAZ918QO&sprefix=ultrawide%2Caps%2C366&ref=nb_sb_ss_ts-doa-p_2_9'
@@ -43,7 +37,7 @@ def main(search_term):
     """Run the main program"""
     records = []
     url = get_url(search_term)
-    driver = webdriver.Chrome()  # Use Chrome driver, make sure chromedriver is in your PATH
+    driver = webdriver.Firefox()  # Use Firefox driver, make sure geckodriver is in your PATH
     for page in range(1, 21):
         driver.get(url.format(page))
         soup = BeautifulSoup(driver.page_source, 'html.parser')
